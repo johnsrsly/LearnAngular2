@@ -44,9 +44,13 @@
                                 [style.width.px]='imgWidth'
                                 [style.margin.px]='imgMargin' />
                        </td>
-                       <td>{{p.productName}}</td>
+                       <td>
+                           <a [routerLink]="['ProductDetail', {id: p.productId}]">
+                               {{p.productName}}
+                               </a>
+                           </td>
                        <td>{{p.productCode}}</td>
-                       <td>{{p.productDate}}</td>
+                       <td>{{p.releaseDate}}</td>
                        <td>{{p.price | currency:'USD':true}}</td>
                        <td>
                            <ai-star [rating]='p.starRating'
